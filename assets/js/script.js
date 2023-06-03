@@ -14,26 +14,24 @@ calcular.addEventListener('click', miFuncion);
 
 // definición de la función miFuncion
 function miFuncion () {
-    // se verifica que la cantidad no sea un entero negativo
+    // si ambos campos están vacíos, envía mensajes respectivos
     // en caso contrario, se envía un mensaje, que aparece en la tarjeta
-    if (cantidad_a_comprar.value < 0) {
-        cantidad_incorrecta.innerHTML = 'Por favor, ingrese un valor positivo';
+    if (cantidad_a_comprar.value <= 0 && color_seleccionado.value == '') {
+        color_error.innerHTML = 'El campo color está vacío';
+        cantidad_incorrecta.innerHTML = 'Ingrese un valor positivo';
+    } else
+    // se ha seleccionado sólo el color pero la cantidad no es correcta
+    if (cantidad_a_comprar.value <= 0 && color_seleccionado.value != '') {
+        cantidad_incorrecta.innerHTML = 'Ingrese un valor positivo';
         color_error.innerHTML = '';
     } else
-    // en caso se ser la cantidad igual a cero, se pide que al menos ingrese el valor 1
-    if (cantidad_a_comprar.value == 0) {
-        cantidad_incorrecta.innerHTML = 'La cantidad debe ser al menos 1';
-        color_error.innerHTML = '';
-    } else
-    // si el campo de Color estuviere vacío,
-    // aparece un mensaje en la tarjeta indicando esta situación
-    if(color_seleccionado.value === '' ) {
+    // la cantidad es correcta, pero el campo color está vacío
+    if (cantidad_a_comprar.value > 0 && color_seleccionado.value == '')  {
         cantidad_incorrecta.innerHTML = '';
-        color_error.innerHTML = 'Por favor, seleccione un color'
-    }
-    // si la cantidad es al menos 1 y hay un color especificado
-    // se procede a hacer los cálculos correspondientes
-    // los que aparecen reflejados al costado de la tarjeta
+        color_error.innerHTML = 'Por favor, ingrese un color';
+    } 
+    // no ocurre ninguna de las situaciones anteriores,
+    // vale decir, se ha seleccionado un color y la cantidad es positiva
     else {
         // se crea una variable auxiliar para guardar la cantidad a pagar
         let subtotal = 459690 * cantidad_a_comprar.value
