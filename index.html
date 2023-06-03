@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando Total</title>
+    <!-- liga estilos.css -->
+    <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="cards">
+            <div class="card">
+                <img src="assets/img/compu6.jpg" alt="">
+
+                <label for="cantidad_a_comprar">Indique cuántos artículos desea</label>
+                <input type="number" id="cantidad_a_comprar">
+
+                <p id="cantidad_incorrecta"></p>
+
+                <label for="color_seleccionado">Indique qué color prefiere</label>
+                <select name="color" id="color_seleccionado">
+                    <option value="red">Rojo</option>
+                    <option value="white">Blanco</option>
+                    <option value="black">Negro</option>
+                    <option value="blue">Azul</option>
+                    <option value="yellow">Amarillo</option>
+                </select>
+
+                <button id="calcular">Calcular Total</button>
+            </div>
+        </div>
+        <div class="calculos">
+            <div id="total">
+                <p>Total: </p> <p id="total_pagar">0</p>
+            </div>
+
+            <div id="cantidad">
+                <p>Cantidad: </p> <p id="total_articulos">0</p>
+            </div>
+
+            <div id="color_elegido">
+                <p>Color: </p> <p id="mi_color"></p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+    
+</body>
+</html>
