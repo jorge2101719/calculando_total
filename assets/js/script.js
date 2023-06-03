@@ -38,8 +38,8 @@ function miFuncion () {
         cantidad_incorrecta.innerHTML = '';
         color_error.innerHTML = '';
         // se modifica el DOM agregando la cantidad a pagar
-        // pero se agrega una función para modificar su formato
-        // más adecuado a los países de habla hispana
+        // pero se agrega una función para modificar su formato,
+        // que es más adecuado a los países de habla hispana
         total_pagar.innerHTML = '$ ' + new Intl.NumberFormat('es-ES').format(subtotal);
         total_articulos.innerHTML = cantidad_a_comprar.value;
         mi_color.style.backgroundColor = color_seleccionado.value;
