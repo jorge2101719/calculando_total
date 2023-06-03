@@ -21,7 +21,7 @@ function miFuncion () {
     } else
     // en caso se ser la cantidad igual a cero, se pide que al menos ingrese el valor 1
     if (cantidad_a_comprar.value == 0) {
-        cantidad_incorrecta.innerHTML = 'Procure que la cantidad sea al menos 1'
+        cantidad_incorrecta.innerHTML = 'La cantidad debe ser al menos 1'
     } else
     // si el campo de Color estuviere vacío,
     // aparece un mensaje en la tarjeta indicando esta situación
@@ -32,9 +32,14 @@ function miFuncion () {
     // se procede a hacer los cálculos correspondientes
     // los que aparecen reflejados al costado de la tarjeta
     else {
+        // se crea una variable auxiliar para guardar la cantidad a pagar
+        let subtotal = 400000 * cantidad_a_comprar.value
         cantidad_incorrecta.innerHTML = '';
         color_error.innerHTML = '';
-        total_pagar.innerHTML = '$ ' + 400000 * cantidad_a_comprar.value;
+        // se modifica el DOM agregando la cantidad a pagar
+        // pero se agrega una función para modificar su formato
+        // más adecuado a los países de habla hispana
+        total_pagar.innerHTML = '$ ' + new Intl.NumberFormat('es-ES').format(subtotal);
         total_articulos.innerHTML = cantidad_a_comprar.value;
         mi_color.style.backgroundColor = color_seleccionado.value;
     }
