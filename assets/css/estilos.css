@@ -1,3 +1,9 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
+}
+
+
 .cards {
     grid-area: tarjeta;
     width: 95%;
@@ -21,11 +27,18 @@
     align-items: center;
     gap: 15px;
     padding: 2%;
-    background-color: aqua;
+    background-color: midnightblue;
+    color: white;
 }
 
 .card img {
     width: 25%;
+}
+
+#calcular {
+    background-color: orangered;
+    color: white;
+    border-radius: 5px;
 }
 
 
