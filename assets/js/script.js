@@ -10,7 +10,6 @@ let color_error = document.querySelector('#color_error');
 calcular.addEventListener('click', miFuncion);
 
 function miFuncion () {
-    console.log('dentro de la función');
     if (cantidad_a_comprar.value < 0) {
         cantidad_incorrecta.innerHTML = 'Por favor, ingrese un valor positivo';
     } else if (cantidad_a_comprar.value == 0) {
