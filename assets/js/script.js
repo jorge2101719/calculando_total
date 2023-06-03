@@ -18,14 +18,17 @@ function miFuncion () {
     // en caso contrario, se envía un mensaje, que aparece en la tarjeta
     if (cantidad_a_comprar.value < 0) {
         cantidad_incorrecta.innerHTML = 'Por favor, ingrese un valor positivo';
+        color_error.innerHTML = '';
     } else
     // en caso se ser la cantidad igual a cero, se pide que al menos ingrese el valor 1
     if (cantidad_a_comprar.value == 0) {
-        cantidad_incorrecta.innerHTML = 'La cantidad debe ser al menos 1'
+        cantidad_incorrecta.innerHTML = 'La cantidad debe ser al menos 1';
+        color_error.innerHTML = '';
     } else
     // si el campo de Color estuviere vacío,
     // aparece un mensaje en la tarjeta indicando esta situación
     if(color_seleccionado.value === '' ) {
+        cantidad_incorrecta.innerHTML = '';
         color_error.innerHTML = 'Por favor, seleccione un color'
     }
     // si la cantidad es al menos 1 y hay un color especificado
@@ -33,7 +36,7 @@ function miFuncion () {
     // los que aparecen reflejados al costado de la tarjeta
     else {
         // se crea una variable auxiliar para guardar la cantidad a pagar
-        let subtotal = 400000 * cantidad_a_comprar.value
+        let subtotal = 459690 * cantidad_a_comprar.value
         cantidad_incorrecta.innerHTML = '';
         color_error.innerHTML = '';
         // se modifica el DOM agregando la cantidad a pagar
