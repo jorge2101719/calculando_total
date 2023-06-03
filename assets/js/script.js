@@ -7,23 +7,40 @@ let total_articulos = document.querySelector('#total_articulos');
 let mi_color = document.querySelector('#mi_color');
 let color_error = document.querySelector('#color_error');
 
+
+// se incluye un oídor en botón Calcular Total, que llama a la función miFuncion
 calcular.addEventListener('click', miFuncion);
 
+
+// definición de la función miFuncion
 function miFuncion () {
+    // se verifica que la cantidad no sea un entero negativo
+    // en caso contrario, se envía un mensaje, que aparece en la tarjeta
     if (cantidad_a_comprar.value < 0) {
         cantidad_incorrecta.innerHTML = 'Por favor, ingrese un valor positivo';
-    } else if (cantidad_a_comprar.value == 0) {
+    } else
+    // en caso se ser la cantidad igual a cero, se pide que al menos ingrese el valor 1
+    if (cantidad_a_comprar.value == 0) {
         cantidad_incorrecta.innerHTML = 'Procure que la cantidad sea al menos 1'
-    } else if(color_seleccionado.value === '' ) {
+    } else
+    // si el campo de Color estuviere vacío,
+    // aparece un mensaje en la tarjeta indicando esta situación
+    if(color_seleccionado.value === '' ) {
         color_error.innerHTML = 'Por favor, seleccione un color'
-    } else {
+    }
+    // si la cantidad es al menos 1 y hay un color especificado
+    // se procede a hacer los cálculos correspondientes
+    // los que aparecen reflejados al costado de la tarjeta
+    else {
         cantidad_incorrecta.innerHTML = '';
         color_error.innerHTML = '';
         total_pagar.innerHTML = '$ ' + 400000 * cantidad_a_comprar.value;
         total_articulos.innerHTML = cantidad_a_comprar.value;
         mi_color.style.backgroundColor = color_seleccionado.value;
     }
-    // instrucciones que limpian los campos Cantidad y Color, de la tarjeta
+    // hecha las operaciones, se incluyen las instrucciones
+    // que limpian los campos Cantidad y Color, de la tarjeta
+    // pero no la última información ingresada a la derecha
     cantidad_a_comprar.value = '';
     color_seleccionado.value = ''
 }
