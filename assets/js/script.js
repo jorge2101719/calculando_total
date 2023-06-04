@@ -59,10 +59,10 @@ function miFuncion () {
         mi_color.style.backgroundColor = color_seleccionado.value;
         cantidad_incorrecta.style.border = '0';
         color_error.style.border = '0';
+        // hecha las operaciones, se incluyen las instrucciones
+        // que limpian los campos Cantidad y Color, de la tarjeta
+        // pero no la última información ingresada a la derecha
+        cantidad_a_comprar.value = '';
+        color_seleccionado.value = ''
     }
-    // hecha las operaciones, se incluyen las instrucciones
-    // que limpian los campos Cantidad y Color, de la tarjeta
-    // pero no la última información ingresada a la derecha
-    cantidad_a_comprar.value = '';
-    color_seleccionado.value = ''
 }
