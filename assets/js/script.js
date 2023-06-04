@@ -14,22 +14,28 @@ calcular.addEventListener('click', miFuncion);
 
 // definición de la función miFuncion
 function miFuncion () {
+    // se ha seleccionado sólo el color pero la cantidad no es correcta
+    if (cantidad_a_comprar.value <= 0 && color_seleccionado.value != '') {
+        color_error.style.border = '0';
+        cantidad_incorrecta.innerHTML = 'Ingrese un valor positivo';
+        cantidad_incorrecta.style.border = '1px solid yellow';
+        color_error.innerHTML = '';
+    } else
+    // la cantidad es correcta, pero el campo color está vacío
+    if (cantidad_a_comprar.value > 0 && color_seleccionado.value == '')  {
+        cantidad_incorrecta.style.border = '0';
+        cantidad_incorrecta.innerHTML = '';
+        color_error.innerHTML = 'Por favor, ingrese un color';
+        color_error.style.border = '1px solid yellow';
+    } else
     // si ambos campos están vacíos, envía mensajes respectivos
     // en caso contrario, se envía un mensaje, que aparece en la tarjeta
     if (cantidad_a_comprar.value <= 0 && color_seleccionado.value == '') {
         color_error.innerHTML = 'El campo color está vacío';
         cantidad_incorrecta.innerHTML = 'Ingrese un valor positivo';
-    } else
-    // se ha seleccionado sólo el color pero la cantidad no es correcta
-    if (cantidad_a_comprar.value <= 0 && color_seleccionado.value != '') {
-        cantidad_incorrecta.innerHTML = 'Ingrese un valor positivo';
-        color_error.innerHTML = '';
-    } else
-    // la cantidad es correcta, pero el campo color está vacío
-    if (cantidad_a_comprar.value > 0 && color_seleccionado.value == '')  {
-        cantidad_incorrecta.innerHTML = '';
-        color_error.innerHTML = 'Por favor, ingrese un color';
-    } 
+        cantidad_incorrecta.style.border = '1px solid yellow';
+        color_error.style.border = '1px solid yellow';
+    }
     // no ocurre ninguna de las situaciones anteriores,
     // vale decir, se ha seleccionado un color y la cantidad es positiva
     else {
@@ -43,6 +49,8 @@ function miFuncion () {
         total_pagar.innerHTML = '$ ' + new Intl.NumberFormat('es-ES').format(subtotal);
         total_articulos.innerHTML = cantidad_a_comprar.value;
         mi_color.style.backgroundColor = color_seleccionado.value;
+        cantidad_incorrecta.style.border = '0';
+        color_error.style.border = '0';
     }
     // hecha las operaciones, se incluyen las instrucciones
     // que limpian los campos Cantidad y Color, de la tarjeta
