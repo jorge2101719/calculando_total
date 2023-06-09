@@ -18,6 +18,7 @@ function miFuncion () {
     if (cantidad_a_comprar.value <= 0 && color_seleccionado.value != '') {
         color_error.style.border = '0';
         cantidad_incorrecta.innerHTML = 'Ingrese un valor positivo';
+        cantidad_incorrecta.style.color = 'red';
         cantidad_incorrecta.style.border = '1px solid yellow';
         cantidad_incorrecta.style.borderRadius = '5px';
         cantidad_incorrecta.style.padding = '1%';
@@ -28,6 +29,7 @@ function miFuncion () {
         cantidad_incorrecta.style.border = '0';
         cantidad_incorrecta.innerHTML = '';
         color_error.innerHTML = 'Por favor, ingrese un color';
+        color_error.style.color = 'red';
         color_error.style.border = '1px solid yellow';
         color_error.style.borderRadius = '5px';
         color_error.style.padding = '1%';
@@ -37,6 +39,8 @@ function miFuncion () {
     if (cantidad_a_comprar.value <= 0 && color_seleccionado.value == '') {
         color_error.innerHTML = 'El campo color está vacío';
         cantidad_incorrecta.innerHTML = 'Ingrese un valor positivo';
+        cantidad_incorrecta.style.color = 'red';
+        color_error.style.color = 'red';
         cantidad_incorrecta.style.border = '1px solid yellow';
         color_error.style.border = '1px solid yellow';
         cantidad_incorrecta.style.borderRadius = '5px';
